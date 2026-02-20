@@ -38,4 +38,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\KOI.Blueprint.Application\KOI.Blueprint.Application.csproj" />
+    <ProjectReference Include="..\KOI.Blueprint.Domain\KOI.Blueprint.Domain.csproj" />
+    <ProjectReference Include="..\KOI.Blueprint.Infrastructure\KOI.Blueprint.Infrastructure.csproj" />
+    <ProjectReference Include="..\KOI.Blueprint.Shared\KOI.Blueprint.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
