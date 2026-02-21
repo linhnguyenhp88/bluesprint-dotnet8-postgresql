@@ -1,11 +1,17 @@
+using KOI.Blueprint.Application;
+using KOI.Blueprint.Domain.Interfaces;
+using KOI.Blueprint.Infrastructure.EntityFrameworkCore;
+using KOI.Blueprint.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
 using System;
@@ -17,14 +23,12 @@ namespace KOI.Blueprint.API
 {
     public class Startup
     {
-        private readonly IConfiguration _config;
+        public IConfiguration Configuration { get; }
 
         public Startup(IConfiguration configuration)
         {
-            _config = configuration;
+            Configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -39,6 +43,14 @@ namespace KOI.Blueprint.API
                                  .AllowAnyMethod();
                       });
             });
+          
+            var connectionStr = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<KOISystemContext>(options =>
+                options.UseNpgsql(
+                    Configuration.GetConnectionString("DefaultConnection"),
+                    x => x.MigrationsAssembly("KOI.Blueprint.API") 
+                ));
+            services.AddApplication();
 
             services.AddControllers().AddNewtonsoftJson(option =>
             {
@@ -47,6 +59,17 @@ namespace KOI.Blueprint.API
             });
 
             services.AddControllers();
+            services.AddApiVersioning(options =>
+            {
+                options.ReportApiVersions = true;
+                options.DefaultApiVersion = new ApiVersion(1, 0);
+            });
+            services.AddVersionedApiExplorer(options =>
+            {
+                options.GroupNameFormat = "'v'VVV";
+                options.SubstituteApiVersionInUrl = true;
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "KOI.Blueprint.API", Version = "v1" });

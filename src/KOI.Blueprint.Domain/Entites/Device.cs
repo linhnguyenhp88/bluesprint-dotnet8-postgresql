@@ -19,24 +19,5 @@ namespace KOI.Blueprint.Domain.Entites
         public string? ObjectName { get; private set; }
         public DateTimeOffset CreatedAt { get; set; }
         public DateTime UpdatedDate { get; set; }
-
-        //// Commercial
-        //public decimal CalibrationPrice { get; private set; }
-        //public decimal DiscountPercent { get; private set; }
-        //public bool HasSceCertificate { get; private set; }
-
-        //// Lifecycle
-        //public DeviceStatus Status { get; private set; }
-        //public DateTimeOffset IncomingDate { get; private set; }
-        //public DateTimeOffset? DueDate { get; private set; }
-        //public DateTimeOffset? OutgoingDate { get; private set; }
-
-        //// Notes
-        //public string? MemoExternal { get; private set; }
-        //public string? MemoInternal { get; private set; }
-
-        //// Relationship
-        //public Guid CustomerId { get; private set; }
-
     }
 }

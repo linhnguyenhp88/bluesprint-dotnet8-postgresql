@@ -19,20 +19,17 @@ namespace KOI.Blueprint.Infrastructure.EntityFrameworkCore
             
             deviceConfiguration
                 .Property<string>("DeviceNo")
-                .HasColumnName("DeviceNo")
-                .HasMaxLength(100)
+                .HasColumnName("DeviceNo")      
                 .IsRequired();
 
             deviceConfiguration
                 .Property<string>("SerialNumber")
-                .HasColumnName("SerialNumber")
-                .HasMaxLength(100)
+                .HasColumnName("SerialNumber")           
                 .IsRequired(false);
 
             deviceConfiguration
                .Property<string>("InventoryNumber")
-               .HasColumnName("InventoryNumber")
-               .HasMaxLength(100)
+               .HasColumnName("InventoryNumber")              
                .IsRequired(false);
 
             deviceConfiguration
@@ -48,8 +45,7 @@ namespace KOI.Blueprint.Infrastructure.EntityFrameworkCore
 
             deviceConfiguration
               .Property<string>("ObjectName")
-              .HasColumnName("ObjectName")
-              .HasMaxLength(250)
+              .HasColumnName("ObjectName")           
               .IsRequired(false);
 
             deviceConfiguration
