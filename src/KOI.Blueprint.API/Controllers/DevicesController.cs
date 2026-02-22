@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using KOI.Blueprint.Application.Devices.Dtos;
+using KOI.Blueprint.Application.Devices.Commands;
 
 namespace KOI.Blueprint.API.Controllers
 {
@@ -23,11 +25,25 @@ namespace KOI.Blueprint.API.Controllers
 
         [HttpGet]
         [Route("get-all-devices")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]    
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetAllDevices()
         {
            var result =  "Hello World".ToString();
            await Task.Delay(100);
            return Ok(result);
         }
+
+        [HttpPost]
+        [Route("add-device")]
+        [ProducesResponseType(typeof(DeviceDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<DeviceDto>> Create([FromBody] CreateDeviceCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
     }
 }

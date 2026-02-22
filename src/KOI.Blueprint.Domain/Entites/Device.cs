@@ -11,12 +11,12 @@ namespace KOI.Blueprint.Domain.Entites
     public class Device : Entity, IAggregateRoot
     {
         // Identification
-        public string DeviceNo { get; private set; } = default!;
-        public string? SerialNumber { get; private set; }
-        public string? InventoryNumber { get; private set; }
-        public string Manufacturer { get; private set; } = default!;
-        public string Type { get; private set; } = default!;
-        public string? ObjectName { get; private set; }
+        public string? DeviceNo { get; set; } 
+        public string? SerialNumber { get; set; }
+        public string? InventoryNumber { get; set; }
+        public string? Manufacturer { get; set; }
+        public string? Type { get; set; } 
+        public string? ObjectName { get; set; }
         public DateTimeOffset CreatedAt { get; set; }
         public DateTime UpdatedDate { get; set; }
     }
