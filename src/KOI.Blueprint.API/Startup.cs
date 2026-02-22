@@ -88,8 +88,14 @@ namespace KOI.Blueprint.API
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "KOI.Blueprint.API v1"));
             }
 
-            app.UseHttpsRedirection();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "KOI.Blueprint.API v1"));
 
+            if (!env.IsDevelopment())
+            {
+                app.UseHttpsRedirection();
+            }
+          
             app.UseRouting();
 
             app.UseCors(x =>
