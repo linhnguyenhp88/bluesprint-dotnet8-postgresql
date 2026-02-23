@@ -18,8 +18,4 @@
     <ProjectReference Include="..\KOI.Blueprint.Infrastructure\KOI.Blueprint.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Devices\Queries\" />
-  </ItemGroup>
-
 </Project>

@@ -10,6 +10,6 @@ namespace KOI.Blueprint.Domain.Interfaces
     public interface IDeviceRepository : IRepository<Device>
     {
         Task AddAsync(Device device);
-        Task<List<Device>> ListAllDevicesAsync();
+        Task<List<Device>> ListAllDevicesAsync(CancellationToken cancellationToken = default);
     }
 }

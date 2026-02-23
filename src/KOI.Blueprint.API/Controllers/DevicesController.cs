@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using KOI.Blueprint.Application.Devices.Dtos;
 using KOI.Blueprint.Application.Devices.Commands;
+using KOI.Blueprint.Application.Devices.Queries;
+using System.Threading;
 
 namespace KOI.Blueprint.API.Controllers
 {
@@ -29,9 +31,8 @@ namespace KOI.Blueprint.API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetAllDevices()
         {
-           var result =  "Hello World".ToString();
-           await Task.Delay(100);
-           return Ok(result);
+            var result = await _mediator.Send(new ListDevicesQuery());
+            return Ok(result);
         }
 
         [HttpPost]

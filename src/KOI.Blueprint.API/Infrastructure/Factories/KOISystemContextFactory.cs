@@ -21,7 +21,6 @@ namespace KOI.Blueprint.API.Infrastructure.Factories
             var connectionStr = config.GetConnectionString("DefaultConnection"); 
             optionsBuilder.UseNpgsql(connectionStr, npgsql =>
             {
-                // Chọn assembly chứa migrations (đổi lại theo dự án bạn muốn chứa migrations)
                 npgsql.MigrationsAssembly("KOI.Blueprint.API");
             });
 

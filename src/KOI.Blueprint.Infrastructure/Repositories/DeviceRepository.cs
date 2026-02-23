@@ -29,9 +29,13 @@ namespace KOI.Blueprint.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task<List<Device>> ListAllDevicesAsync()
+        public async Task<List<Device>> ListAllDevicesAsync(CancellationToken cancellationToken = default)
         {
-            var query = await _context.Devices.ToListAsync();
+            var query = await _context.Devices
+                .AsNoTracking()
+                .OrderByDescending(x => x.CreatedAt)
+                .ToListAsync(cancellationToken);   
+
             return query;
         }
     }
