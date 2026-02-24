@@ -3,6 +3,7 @@ using System;
 using KOI.Blueprint.Infrastructure.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace KOI.Blueprint.API.Migrations
 {
     [DbContext(typeof(KOISystemContext))]
-    partial class KOISystemContextModelSnapshot : ModelSnapshot
+    [Migration("20260224143219_AddedUsersSchema")]
+    partial class AddedUsersSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
