@@ -9,11 +9,13 @@ using KOI.Blueprint.Application.Devices.Dtos;
 using KOI.Blueprint.Application.Devices.Commands;
 using KOI.Blueprint.Application.Devices.Queries;
 using System.Threading;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KOI.Blueprint.API.Controllers
 {
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/devices")]
+    [Authorize]
     [ApiController]
     public class DevicesController : ControllerBase
     {

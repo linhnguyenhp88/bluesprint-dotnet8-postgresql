@@ -1,0 +1,62 @@
+[
+  {
+    "UserName": "john.doe",
+    "Email": "john.doe@demo.com",
+    "FullName": "John Doe",
+    "DisplayName": "John",
+    "Department": "Calibration",
+    "Reason": "Initial import",
+    "CreatedBy": "System",
+    "UpdatedBy": "System",
+    "CreatedDate": "2025-02-23T00:00:00",
+    "LastActive": "2025-02-23T00:00:00",
+    "City": "Zurich",
+    "Country": "Switzerland",
+    "Status": "Active"
+  },
+  {
+    "UserName": "jane.smith",
+    "Email": "jane.smith@demo.com",
+    "FullName": "Jane Smith",
+    "DisplayName": "Jane",
+    "Department": "Engineering",
+    "Reason": "Initial import",
+    "CreatedBy": "System",
+    "UpdatedBy": "System",
+    "CreatedDate": "2025-02-23T00:00:00",
+    "LastActive": "2025-02-23T00:00:00",
+    "City": "Geneva",
+    "Country": "Switzerland",
+    "Status": "Active"
+  },
+  {
+    "UserName": "michael.lee",
+    "Email": "michael.lee@demo.com",
+    "FullName": "Michael Lee",
+    "DisplayName": "Mike",
+    "Department": "Sales",
+    "Reason": "Initial import",
+    "CreatedBy": "System",
+    "UpdatedBy": "System",
+    "CreatedDate": "2025-02-23T00:00:00",
+    "LastActive": "2025-02-23T00:00:00",
+    "City": "Bern",
+    "Country": "Switzerland",
+    "Status": "Active"
+  },
+  {
+    "UserName": "anna.muller",
+    "Email": "anna.muller@demo.com",
+    "FullName": "Anna Müller",
+    "DisplayName": "Anna",
+    "Department": "Support",
+    "Reason": "Initial import",
+    "CreatedBy": "System",
+    "UpdatedBy": "System",
+    "CreatedDate": "2025-02-23T00:00:00",
+    "LastActive": "2025-02-23T00:00:00",
+    "City": "Basel",
+    "Country": "Switzerland",
+    "Status": "Active"
+  }
+]
