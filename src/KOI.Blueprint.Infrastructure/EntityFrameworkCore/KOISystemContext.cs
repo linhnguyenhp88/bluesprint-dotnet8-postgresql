@@ -26,7 +26,7 @@ namespace KOI.Blueprint.Infrastructure.EntityFrameworkCore
         public KOISystemContext(DbContextOptions<KOISystemContext> options)
             : base(options) 
         {
-            this.Database.EnsureCreated();
+            //this.Database.EnsureCreated();
             System.Diagnostics.Debug.WriteLine("KOISystemContext::ctor ->" + this.GetHashCode());
         }
 

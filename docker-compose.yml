@@ -1,4 +1,19 @@
 services:
+  api:
+    build:
+      context: .
+      dockerfile: src/KOI.Blueprint.API/Dockerfile
+    image: koi-blueprint-api:latest
+    container_name: koi-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ConnectionStrings__DefaultConnection: Host=postgres;Port=5432;Database=koservice;Username=pgadmin;Password=Admin123!;Ssl Mode=Disable;Trust Server Certificate=true
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+  
   postgres:
     image: postgres:latest
     container_name: pg-koservice
