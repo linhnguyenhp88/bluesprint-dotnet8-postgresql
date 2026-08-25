@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+=======
+<Project Sdk="Microsoft.NET.Sdk">
+>>>>>>> bf57ffe02774cb6b1b05d7b80a66bd363d6d5ab1
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -12,7 +16,10 @@
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
     <PackageReference Include="FluentAssertions" Version="8.10.0" />
+<<<<<<< HEAD
     <PackageReference Include="MediatR" Version="14.0.0" />
+=======
+>>>>>>> bf57ffe02774cb6b1b05d7b80a66bd363d6d5ab1
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
     <PackageReference Include="Moq" Version="4.20.72" />
     <PackageReference Include="xunit" Version="2.5.3" />
@@ -20,7 +27,10 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <ProjectReference Include="..\src\KOI.Blueprint.API\KOI.Blueprint.API.csproj" />
+=======
+>>>>>>> bf57ffe02774cb6b1b05d7b80a66bd363d6d5ab1
     <ProjectReference Include="..\src\KOI.Blueprint.Domain\KOI.Blueprint.Domain.csproj" />
     <ProjectReference Include="..\src\KOI.Blueprint.Infrastructure\KOI.Blueprint.Infrastructure.csproj" />
   </ItemGroup>
@@ -29,8 +39,11 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="Services\DevicesManagement\" />
   </ItemGroup>
 
+=======
+>>>>>>> bf57ffe02774cb6b1b05d7b80a66bd363d6d5ab1
 </Project>
